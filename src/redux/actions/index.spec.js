@@ -1,5 +1,5 @@
-import { SEARCH_REQUESTED, SEARCH_SUCCESS, SEARCH_FAIL } from './'
-import { searchRequested, searchSuccess, searchFail } from './'
+import { SEARCH_REQUESTED, SEARCH_LOADING, SEARCH_SUCCESS, SEARCH_FAIL } from './'
+import { searchRequested, searchLoading, searchSuccess, searchFail } from './'
 
 describe('searchRequested', () => {
   it('returns an object with the argument in the payload', () => {
@@ -10,6 +10,16 @@ describe('searchRequested', () => {
     expect(searchRequested('react')).toEqual(expected)
   })
 })
+
+describe('searchLoading', () => {
+  it('returns an object with the argument in the payload', () => {
+    const expected = {
+      type: SEARCH_LOADING,
+      payload: true
+    }
+    expect(searchLoading(true)).toEqual(expected)
+  })
+});
 
 describe('searchSuccess', () => {
   it('returns an object with the argument in the payload', () => {
