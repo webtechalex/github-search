@@ -1,6 +1,6 @@
 import { SEARCH_SUCCESS } from '../actions'
 
-const searchStatus = (state = [], action) => {
+const searchResults = (state = [], action) => {
   switch (action && action.type) {
     case SEARCH_SUCCESS:
       return action.payload;
@@ -9,4 +9,4 @@ const searchStatus = (state = [], action) => {
   }
 };
 
-export default searchStatus;
+export default searchResults;
