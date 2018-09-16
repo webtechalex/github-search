@@ -1,5 +1,5 @@
-import { SEARCH_REQUESTED, SEARCH_SUCCESS, SEARCH_FAILED, SEARCH_CLEAR } from './'
-import { searchRequested, searchSuccess, searchFail, searchClear } from './'
+import { SEARCH_REQUESTED, SEARCH_SUCCESS, SEARCH_FAIL } from './'
+import { searchRequested, searchSuccess, searchFail } from './'
 
 describe('searchRequested', () => {
   it('returns an object with the argument in the payload', () => {
@@ -26,16 +26,9 @@ describe('searchFail', () => {
   it('returns an object with the argument in the payload', () => {
     const error = 'you have failed the test...'
     const expected = {
-      type: SEARCH_FAILED,
+      type: SEARCH_FAIL,
       payload: error
     }
     expect(searchFail(error)).toEqual(expected)
   })
-})
-
-describe('searchClear', () => {
-  const expected = {
-    type: SEARCH_CLEAR
-  }
-  expect(searchClear()).toEqual(expected)
 })

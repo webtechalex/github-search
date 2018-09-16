@@ -1,5 +1,5 @@
 import searchResults from './searchResults';
-import { searchSuccess, searchClear } from '../actions';
+import { searchSuccess } from '../actions';
 
 describe('searchResults', () => {
   describe('given no arguments', () => {
@@ -17,11 +17,11 @@ describe('searchResults', () => {
     })
   })
 
-  describe('given a SEARCH_CLEAR action', () => {
-    it('returns the search results', () => {
+  describe('given a SEARCH_SUCCESS action with no arguments', () => {
+    it('clears the search results', () => {
       const initialState = ['lots', 'of', 'search', 'results'];
       const newState = [];
-      expect(searchResults(initialState, searchClear())).toEqual(newState)
+      expect(searchResults(initialState, searchSuccess())).toEqual(newState)
     })
   })
 })
