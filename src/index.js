@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import createSageMiddleware from 'redux-saga';
 
@@ -12,7 +12,11 @@ import searchSaga from './redux/sagas/sagas'
 import registerServiceWorker from './registerServiceWorker';
 
 const sagaMiddleware = createSageMiddleware();
-const store = createStore(reducer, applyMiddleware(sagaMiddleware));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  reducer,
+  composeEnhancers(applyMiddleware(sagaMiddleware))
+);
 
 sagaMiddleware.run(searchSaga)
 
