@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 
 import SearchResults from '../components/SearchResults/SearchResults'
 
-const mapStateToProps = ({searchResults}) => ({
+const mapStateToProps = ({searchLoader, searchResults}) => ({
+  searchLoader,
   searchResults
 })
 
