@@ -5,6 +5,7 @@ import { searchLoading, searchSuccess, searchFail } from '../actions';
 
 function* fetchSearchResults(action) {
   try {
+    yield put(searchSuccess());
     yield put(searchLoading(true));
     const results = yield call(get, encodeURI(action.payload));
     yield put(searchLoading(false));
