@@ -5,7 +5,7 @@ import { searchSuccess, searchFail } from '../actions';
 
 function* fetchSearchResults(action) {
   try {
-    const results = yield call(get, action.payload);
+    const results = yield call(get, encodeURI(action.payload));
     yield put(searchSuccess(results));
   } catch (err) {
     yield put(searchFail(err.message));

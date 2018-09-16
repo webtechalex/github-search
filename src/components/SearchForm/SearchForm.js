@@ -20,10 +20,12 @@ class SearchForm extends Component {
   }
 
   handleSubmitSearch() {
-    this.props.searchRequested(`https://api.github.com/search/repositories?q=${this.state.searchInput}`);
-    this.setState({
-      searchInput: ''
-    })
+    if (this.state.searchInput) {
+      this.props.searchRequested(`https://api.github.com/search/repositories?q=${this.state.searchInput}`);
+      this.setState({
+        searchInput: ''
+      })
+    }
   }
 
   render() {
