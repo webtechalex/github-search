@@ -1,8 +1,11 @@
 import React from 'react';
+import SearchFormContainer from './SearchFormContainer'
 
 
 const App = () => {
-  return <p>App!</p>
+  return (
+    <SearchFormContainer />
+  );
 };
 
 export default App;
