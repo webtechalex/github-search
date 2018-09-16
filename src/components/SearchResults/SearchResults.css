@@ -1,0 +1,17 @@
+a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #6ac;
+}
+
+ul {
+  display: inline-block;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  padding: 8px;
+}

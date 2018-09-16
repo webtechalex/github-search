@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './SearchForm.css';
+
 class SearchForm extends Component {
   constructor(props) {
     super(props);
@@ -19,12 +21,15 @@ class SearchForm extends Component {
 
   handleSubmitSearch() {
     this.props.searchRequested(`https://api.github.com/search/repositories?q=${this.state.searchInput}`);
+    this.setState({
+      searchInput: ''
+    })
   }
 
   render() {
     return (
-      <div>
-        <input value={this.state.searchInput} onChange={this.handleChangeSearchInput} />
+      <div className='form-container'>
+        <input value={this.state.searchInput} onChange={this.handleChangeSearchInput} placeholder='search Github...' />
         <button onClick={this.handleSubmitSearch}>Search</button>
       </div>
     );
