@@ -1,10 +1,14 @@
 import React from 'react';
 import SearchFormContainer from './SearchFormContainer'
+import SearchResultsContainer from './SearchResultsContainer'
 
 
 const App = () => {
   return (
-    <SearchFormContainer />
+    <div>
+      <SearchFormContainer />
+      <SearchResultsContainer />
+    </div>
   );
 };
 
