@@ -1,6 +1,6 @@
 import { SEARCH_SUCCESS } from '../actions'
 
-const searchResults = (state = [], action) => {
+const searchResults = (state = null, action) => {
   switch (action && action.type) {
     case SEARCH_SUCCESS:
       return action.payload;

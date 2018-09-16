@@ -7,7 +7,7 @@ export const searchRequested = (query) => ({
   payload: query
 });
 
-export const searchSuccess = (results = []) => ({
+export const searchSuccess = (results = null) => ({
   type: SEARCH_SUCCESS,
   payload: results
 });
